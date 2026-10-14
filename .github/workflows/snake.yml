@@ -1,4 +1,4 @@
-name: Generate contribution snake
+name: Update profile visuals
 
 on:
   schedule:
@@ -30,6 +30,65 @@ jobs:
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%2338bdf8&color_dots=%230b1220,%230c2a4a,%23075685,%230284c7,%2338bdf8
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate activity graph from GitHub data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: python
+        run: |
+          import os, json, urllib.request, datetime, html
+          from pathlib import Path
+          today = datetime.datetime.now(datetime.timezone.utc)
+          start = (today - datetime.timedelta(days=29)).replace(hour=0, minute=0, second=0, microsecond=0)
+          query = """query($user:String!, $from:DateTime!, $to:DateTime!) {
+            user(login:$user) { contributionsCollection(from:$from,to:$to) {
+              contributionCalendar { weeks { contributionDays { date contributionCount } } }
+            } }
+          }"""
+          payload = json.dumps({"query": query, "variables": {
+            "user": "Paulo-SergioAlves", "from": start.isoformat(), "to": today.isoformat()
+          }}).encode()
+          req = urllib.request.Request("https://api.github.com/graphql", data=payload, headers={
+            "Authorization": "Bearer " + os.environ["GH_TOKEN"],
+            "Content-Type": "application/json", "User-Agent": "profile-visuals"
+          })
+          with urllib.request.urlopen(req, timeout=40) as response:
+            data = json.load(response)
+          if data.get("errors"):
+            raise RuntimeError("GitHub contribution query failed: " + str(data["errors"]))
+          weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+          days = sorted([d for w in weeks for d in w["contributionDays"]
+            if start.date().isoformat() <= d["date"] <= today.date().isoformat()], key=lambda d:d["date"])
+          if not days:
+            raise RuntimeError("No contribution calendar returned")
+          peak = max(1, max(d["contributionCount"] for d in days))
+          parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-label="Contribuições diárias dos últimos 30 dias">',
+            '<rect width="1000" height="300" rx="14" fill="#0b1220"/>',
+            '<g font-family="monospace"><text x="38" y="39" fill="#38bdf8" font-size="18">CONTRIBUTION ACTIVITY / 30 DIAS</text>']
+          for level in range(5):
+            y = 230 - level * 40
+            parts.append(f'<path d="M45 {y}H960" stroke="#17365a"/><text x="12" y="{y+4}" fill="#94a3b8" font-size="11">{peak*level/4:g}</text>')
+          points = []
+          for i, day in enumerate(days):
+            x = 50 + i * 900 / max(1,len(days)-1)
+            y = 230 - day["contributionCount"] / peak * 160
+            points.append(f'{x:.1f},{y:.1f}')
+            label = html.escape(day['date'] + ': ' + str(day['contributionCount']) + ' contribuições')
+            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3" fill="#7dd3fc"><title>{label}</title></circle>')
+            if i % 7 == 0 or i == len(days)-1:
+              parts.append(f'<text x="{x:.1f}" y="255" text-anchor="middle" fill="#94a3b8" font-size="11">{day["date"][8:10]}/{day["date"][5:7]}</text>')
+          parts.append('<polyline points="' + ' '.join(points) + '" fill="none" stroke="#38bdf8" stroke-width="2"/>')
+          parts.append(f'<text x="38" y="284" fill="#64748b" font-size="11">Fonte: GitHub / atualizado em {today.date().isoformat()} UTC</text></g></svg>')
+          Path("dist").mkdir(exist_ok=True)
+          Path("dist/activity.svg").write_text(''.join(parts))
+
+      - name: Generate trophies locally with official action
+        uses: ryo-ma/github-profile-trophy@master
+        with:
+          username: Paulo-SergioAlves
+          output_path: dist/trophy.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          theme: algolia
 
       - name: Publish SVGs to output branch
         uses: crazy-max/ghaction-github-pages@v4
