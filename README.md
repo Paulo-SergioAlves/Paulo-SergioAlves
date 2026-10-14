@@ -24,10 +24,8 @@ Nos projetos, exploro programação orientada a objetos, persistência de dados 
 ### `02 / TECNOLOGIAS`
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=java,python,spring,mysql,git&theme=dark" alt="Java, Python, Spring Boot, MySQL e Git" />
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/JUnit-0B1220?style=for-the-badge&logo=junit5&logoColor=38BDF8" alt="JUnit" />
+  <img src="https://skillicons.dev/icons?i=java,python,spring,mysql,git&theme=dark" alt="Java, Python, Spring Boot, MySQL e Git" height="48" />
+  <img src="assets/junit5.svg" width="48" height="48" alt="JUnit 5" />
 </p>
 
 <sub>Programação orientada a objetos · Testes unitários · Versionamento · Projetos em equipe</sub>
