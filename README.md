@@ -4,7 +4,7 @@
 
 <br />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3200&pause=1000&color=38BDF8&center=true&vCenter=true&width=700&height=65&lines=Ol%C3%A1%2C+eu+sou+Paulo+S%C3%A9rgio.;Estudante+de+Sistemas+de+Informa%C3%A7%C3%A3o;Java+%7C+Python+%7C+Spring+Boot;Aprendendo+hoje.+Construindo+o+amanh%C3%A3." alt="Apresentação animada de Paulo Sérgio" width="100%" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3200&pause=1000&color=38BDF8&center=true&vCenter=true&width=950&height=80&lines=Ol%C3%A1%2C+eu+sou+Paulo+S%C3%A9rgio.;Estudante+de+Sistemas+de+Informa%C3%A7%C3%A3o;Java+%7C+Python+%7C+Spring+Boot;Aprendendo+hoje.+Construindo+o+amanh%C3%A3." alt="Apresentação animada de Paulo Sérgio" width="100%" />
 
 <a href="https://github.com/Paulo-SergioAlves"><img src="https://img.shields.io/badge/GitHub-Paulo--SergioAlves-0B1220?style=for-the-badge&logo=github&logoColor=38BDF8" alt="GitHub de Paulo Sérgio" /></a>
 <a href="https://www.linkedin.com/in/Paulo-Sergio-Alves-Pessoa/"><img src="https://img.shields.io/badge/LinkedIn-Conectar-0B1220?style=for-the-badge&logo=linkedin&logoColor=38BDF8" alt="Conectar no LinkedIn" /></a>
@@ -94,12 +94,12 @@ paulo@dev:~$ cat learning-roadmap
 
 ### `07 / ACTIVITY STREAM`
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Paulo-SergioAlves&bg_color=0B1220&color=94A3B8&line=38BDF8&point=7DD3FC&area=true&area_color=075985&hide_border=true&custom_title=Paulo%20S%C3%A9rgio%20%2F%20Contribution%20Activity" width="100%" alt="Gráfico de atividades recentes no GitHub" />
+<img src="https://raw.githubusercontent.com/Paulo-SergioAlves/Paulo-SergioAlves/output/activity.svg" width="100%" alt="Contribuições diárias no GitHub nos últimos 30 dias" />
 
 ### `08 / ACHIEVEMENTS`
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Paulo-SergioAlves&theme=algolia&no-frame=true&no-bg=true&column=3&margin-w=12&margin-h=12" alt="Troféus gerados a partir das atividades públicas do GitHub" />
+  <img src="https://raw.githubusercontent.com/Paulo-SergioAlves/Paulo-SergioAlves/output/trophy.svg" alt="Troféus gerados a partir das atividades públicas do GitHub" />
 </p>
 
 ### `09 / CONTRIBUTION SNAKE`
