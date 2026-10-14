@@ -24,12 +24,10 @@ Nos projetos, exploro programação orientada a objetos, persistência de dados 
 ### `02 / TECNOLOGIAS`
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Java-0B1220?style=for-the-badge&logo=openjdk&logoColor=38BDF8" alt="Java" />
-  <img src="https://img.shields.io/badge/Python-0B1220?style=for-the-badge&logo=python&logoColor=38BDF8" alt="Python" />
-  <img src="https://img.shields.io/badge/Spring_Boot-0B1220?style=for-the-badge&logo=springboot&logoColor=38BDF8" alt="Spring Boot" />
-  <img src="https://img.shields.io/badge/MySQL-0B1220?style=for-the-badge&logo=mysql&logoColor=38BDF8" alt="MySQL" />
+  <img src="https://skillicons.dev/icons?i=java,python,spring,mysql,git&theme=dark" alt="Java, Python, Spring Boot, MySQL e Git" />
+</p>
+<p align="center">
   <img src="https://img.shields.io/badge/JUnit-0B1220?style=for-the-badge&logo=junit5&logoColor=38BDF8" alt="JUnit" />
-  <img src="https://img.shields.io/badge/Git-0B1220?style=for-the-badge&logo=git&logoColor=38BDF8" alt="Git" />
 </p>
 
 <sub>Programação orientada a objetos · Testes unitários · Versionamento · Projetos em equipe</sub>
