@@ -15,13 +15,13 @@
 
 ---
 
-### `01 / SOBRE MIM`
+## Sobre mim
 
 Sou **Paulo Sérgio**, estudante de **Sistemas de Informação na Unifacisa**. Estou construindo minha trajetória em desenvolvimento de software, com interesse em Java, aplicações com Spring Boot e soluções que conectam teoria e prática.
 
 Nos projetos, exploro programação orientada a objetos, persistência de dados e testes, aprendendo também com o trabalho em equipe.
 
-### `02 / TECNOLOGIAS`
+## Tecnologias e ferramentas
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=java,python,spring,mysql,git&theme=dark" alt="Java, Python, Spring Boot, MySQL e Git" height="48" />
@@ -30,7 +30,7 @@ Nos projetos, exploro programação orientada a objetos, persistência de dados 
 
 <sub>Programação orientada a objetos · Testes unitários · Versionamento · Projetos em equipe</sub>
 
-### `03 / PROJETOS`
+## Projetos em destaque
 
 <!-- Cards empilhados para manter a leitura em telas pequenas. -->
 <a href="https://github.com/Paulo-SergioAlves/Projeto-Impacta">
@@ -51,7 +51,7 @@ Nos projetos, exploro programação orientada a objetos, persistência de dados 
 **Contexto:** projeto do meu portfólio de estudos em desenvolvimento de software.  
 **Base técnica:** Java, Spring Boot, Spring Data JPA, validação e conector MySQL.
 
-### `04 / EM EVOLUÇÃO`
+## Aprendizado e próximos passos
 
 ```text
 paulo@dev:~$ cat objetivos
@@ -60,7 +60,7 @@ paulo@dev:~$ cat objetivos
 > Evoluir testes com JUnit e documentação dos projetos
 ```
 
-### `05 / ATIVIDADE`
+## Minha atividade no GitHub
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Paulo-SergioAlves&show_icons=true&hide_border=true&bg_color=0B1220&title_color=38BDF8&text_color=CBD5E1&icon_color=38BDF8&locale=pt-br" alt="Estatísticas públicas do GitHub de Paulo Sérgio" width="54%" />
@@ -74,7 +74,7 @@ paulo@dev:~$ cat objetivos
 <img src="https://raw.githubusercontent.com/Paulo-SergioAlves/Paulo-SergioAlves/output/activity.svg" width="100%" alt="Contribuições diárias no GitHub nos últimos 30 dias" />
 
 <details>
-<summary><strong>🏆 Ver conquistas no GitHub</strong></summary>
+<summary><strong>Conquistas no GitHub</strong></summary>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Paulo-SergioAlves/Paulo-SergioAlves/output/trophy.svg" width="100%" alt="Troféus gerados a partir das atividades públicas do GitHub" />
@@ -82,7 +82,7 @@ paulo@dev:~$ cat objetivos
 
 </details>
 
-### `06 / CONTRIBUIÇÕES`
+## Contribuições
 
 <!-- Disponível após a primeira execução bem-sucedida de .github/workflows/snake.yml. -->
 <picture>
@@ -91,7 +91,7 @@ paulo@dev:~$ cat objetivos
   <img alt="Animação snake percorrendo minhas contribuições no GitHub" src="https://raw.githubusercontent.com/Paulo-SergioAlves/Paulo-SergioAlves/output/github-contribution-grid-snake.svg" width="100%" />
 </picture>
 
-### `07 / CONECTE-SE`
+## Vamos conversar
 
 Vamos trocar ideias sobre desenvolvimento, projetos e aprendizado.
 
