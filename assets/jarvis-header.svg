@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<title id="title">Paulo Sérgio — Developer Interface</title>
+<desc id="desc">Interface futurista azul com painel de inicialização e identidade do desenvolvedor.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#020617"/><stop offset="1" stop-color="#0c2345"/></linearGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#38bdf8" stroke-opacity=".07"/></pattern><linearGradient id="line"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#67e8f9"/></linearGradient></defs>
+<rect width="1200" height="360" rx="20" fill="url(#bg)"/><rect width="1200" height="360" rx="20" fill="url(#grid)"/>
+<path d="M30 65V30H90M1110 30H1170V65M30 295V330H90M1110 330H1170V295" fill="none" stroke="#38bdf8" stroke-width="2"/>
+<g font-family="monospace"><text x="65" y="73" fill="#38bdf8" font-size="14" letter-spacing="3">DEVELOPER INTERFACE / PS-01</text><circle cx="1035" cy="68" r="5" fill="#38bdf8"><animate attributeName="opacity" values="1;.3;1" dur="3s" repeatCount="indefinite"/></circle><text x="1050" y="73" fill="#7dd3fc" font-size="12">ONLINE</text>
+<text x="65" y="151" fill="#f0f9ff" font-family="sans-serif" font-size="52" font-weight="700">PAULO SÉRGIO</text><text x="68" y="192" fill="#7dd3fc" font-size="19" letter-spacing="2">CODE. LEARN. BUILD. EVOLVE.</text>
+<text x="68" y="253" fill="#94a3b8" font-size="14">&gt; initializing developer environment...</text><text x="68" y="280" fill="#38bdf8" font-size="14">[ OK ] Java · Python · Spring Boot · MySQL</text><text x="68" y="307" fill="#64748b" font-size="12">SISTEMAS DE INFORMAÇÃO / UNIFACISA</text></g>
+<g transform="translate(1010 190)" fill="none" stroke="#38bdf8"><circle r="83" stroke-opacity=".2"/><circle r="67" stroke-dasharray="90 20 12 20" stroke-width="2"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/></circle><circle r="48" stroke-opacity=".5"/><path d="M-22 0h44M0-22v44" stroke-width="2"/><circle r="9" fill="#38bdf8" fill-opacity=".2"/></g><rect x="65" y="217" width="690" height="2" fill="url(#line)"/>
+</svg>
