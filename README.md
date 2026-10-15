@@ -89,7 +89,7 @@ paulo@dev:~$ cat objetivos
 Vamos trocar ideias sobre desenvolvimento, projetos e aprendizado.
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/Paulo-Sergio-Alves-Pessoa/"><img src="https://img.shields.io/badge/LinkedIn-Paulo_S%C3%A9rgio-0B1220?style=for-the-badge&logo=linkedin&logoColor=38BDF8" alt="LinkedIn de Paulo Sérgio" /></a>
+  <a href="https://www.linkedin.com/in/paulosergioalvespessoa/"><img src="https://img.shields.io/badge/LinkedIn-Paulo_S%C3%A9rgio-0B1220?style=for-the-badge&logo=linkedin&logoColor=38BDF8" alt="LinkedIn de Paulo Sérgio" /></a>
   <a href="https://github.com/Paulo-SergioAlves?tab=repositories"><img src="https://img.shields.io/badge/GitHub-Explore_meus_projetos-0B1220?style=for-the-badge&logo=github&logoColor=38BDF8" alt="Explorar meus repositórios" /></a>
 
   <a href="https://www.instagram.com/alvs.jr_/"><img src="https://img.shields.io/badge/Instagram-%40alvs.jr__-0B1220?style=for-the-badge&logo=instagram&logoColor=38BDF8" alt="Instagram @alvs.jr_" /></a>
