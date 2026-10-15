@@ -78,7 +78,7 @@ jobs:
             if i % 7 == 0 or i == len(days)-1:
               parts.append(f'<text x="{x:.1f}" y="255" text-anchor="middle" fill="#94a3b8" font-size="11">{day["date"][8:10]}/{day["date"][5:7]}</text>')
           parts.append('<polyline points="' + ' '.join(points) + '" fill="none" stroke="#38bdf8" stroke-width="2"/>')
-          parts.append(f'<text x="38" y="284" fill="#64748b" font-size="11">Fonte: GitHub / atualizado em {today.date().isoformat()} UTC</text></g></svg>')
+          parts.append('</g></svg>')
           Path("dist").mkdir(exist_ok=True)
           Path("dist/activity.svg").write_text(''.join(parts))
 
