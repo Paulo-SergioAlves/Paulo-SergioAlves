@@ -2,7 +2,7 @@
 
 <img src="assets/jarvis-header.svg" width="100%" alt="Paulo Sérgio — interface futurista de desenvolvedor" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3200&pause=1800&color=38BDF8&center=true&vCenter=true&width=800&height=60&lines=Aprender%2C+construir+e+evoluir." alt="Aprender, construir e evoluir." width="100%" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3200&pause=1500&color=38BDF8&center=true&vCenter=true&width=950&height=80&lines=Ol%C3%A1%2C+eu+sou+Paulo+S%C3%A9rgio.;Estudante+de+Sistemas+de+Informa%C3%A7%C3%A3o;Java+%7C+Python+%7C+Spring+Boot;Aprendendo+hoje.+Construindo+o+amanh%C3%A3." alt="Apresentação animada de Paulo Sérgio" width="100%" />
 
 </div>
 
