@@ -30,8 +30,6 @@ class PauloSergio {
   <img src="assets/junit5.svg" width="48" height="48" alt="JUnit 5" />
 </p>
 
-<sub>Programação orientada a objetos · Testes unitários · Versionamento · Projetos em equipe</sub>
-
 ## Projetos em destaque
 
 ### [Projeto Impacta ↗](https://github.com/Paulo-SergioAlves/Projeto-Impacta)
