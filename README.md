@@ -17,7 +17,7 @@ class PauloSergio {
     String nome = "Paulo Sérgio";
     String curso = "Sistemas de Informação";
     String instituicao = "Unifacisa";
-    String foco = "Java e aplicações com Spring Boot";
+    String foco = "Desenvolvimento de software";
 }
 ```
 
