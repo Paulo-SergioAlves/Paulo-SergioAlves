@@ -17,7 +17,9 @@ class PauloSergio {
     String nome = "Paulo Sérgio";
     String curso = "Sistemas de Informação";
     String instituicao = "Unifacisa";
+    String cidade = "Riachão do Bacamarte / Campina Grande — PB";
     String foco = "Desenvolvimento de software";
+    String objetivo = "Em busca de estágio em desenvolvimento de software";
 }
 ```
 
