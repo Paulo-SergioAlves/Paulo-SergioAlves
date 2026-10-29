@@ -56,8 +56,8 @@ paulo@dev:~$ cat objetivos
 ## Minha atividade no GitHub
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Paulo-SergioAlves&show_icons=true&hide_border=true&bg_color=0B1220&title_color=38BDF8&text_color=CBD5E1&icon_color=38BDF8&locale=pt-br" alt="Estatísticas públicas do GitHub de Paulo Sérgio" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Paulo-SergioAlves&layout=compact&langs_count=6&hide_border=true&bg_color=0B1220&title_color=38BDF8&text_color=CBD5E1&locale=pt-br" alt="Linguagens mais presentes nos repositórios públicos" />
+  <img src="https://raw.githubusercontent.com/Paulo-SergioAlves/Paulo-SergioAlves/output/stats.svg" alt="Estatísticas públicas do GitHub de Paulo Sérgio" />
+  <img src="https://raw.githubusercontent.com/Paulo-SergioAlves/Paulo-SergioAlves/output/languages.svg" alt="Linguagens mais presentes nos repositórios públicos" />
 </p>
 
 <sub>As linguagens refletem o código dos repositórios analisados pelo serviço, não o nível de domínio de cada tecnologia.</sub>
