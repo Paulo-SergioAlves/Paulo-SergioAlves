@@ -82,6 +82,114 @@ jobs:
           Path("dist").mkdir(exist_ok=True)
           Path("dist/activity.svg").write_text(''.join(parts))
 
+      - name: Generate public statistics and languages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: python
+        run: |
+          import os, json, urllib.request, datetime, html
+          from pathlib import Path
+          from collections import defaultdict
+          
+          def gql(query, variables):
+              request = urllib.request.Request("https://api.github.com/graphql",
+                  data=json.dumps({"query": query, "variables": variables}).encode(),
+                  headers={"Authorization": "Bearer " + os.environ["GH_TOKEN"],
+                           "Content-Type": "application/json", "User-Agent": "profile-visuals"})
+              with urllib.request.urlopen(request, timeout=40) as response:
+                  result = json.load(response)
+              if result.get("errors"):
+                  raise RuntimeError(str(result["errors"]))
+              return result["data"]["user"]
+          
+          query = """query($user:String!, $cursor:String) {
+            user(login:$user) {
+              repositories(first:100,after:$cursor,privacy:PUBLIC,isFork:false,ownerAffiliations:OWNER) {
+                pageInfo { hasNextPage endCursor }
+                nodes {
+                  stargazerCount
+                  languages(first:100) { edges { size node { name color } } }
+                }
+              }
+              contributionsCollection {
+                totalCommitContributions totalPullRequestContributions
+                totalIssueContributions totalPullRequestReviewContributions
+              }
+            }
+          }"""
+          repos = []
+          cursor = None
+          while True:
+              user = gql(query, {"user": "Paulo-SergioAlves", "cursor": cursor})
+              connection = user["repositories"]
+              repos.extend(connection["nodes"])
+              if not connection["pageInfo"]["hasNextPage"]:
+                  break
+              cursor = connection["pageInfo"]["endCursor"]
+          contributions = user["contributionsCollection"]
+          languages = defaultdict(int)
+          colors = {}
+          for repo in repos:
+              for edge in repo["languages"]["edges"]:
+                  name = edge["node"]["name"]
+                  languages[name] += edge["size"]
+                  colors[name] = edge["node"]["color"] or "#38bdf8"
+          
+          def text(x, y, content, size=17, color="#cbd5e1", weight="400"):
+              return f'<text x="{x}" y="{y}" fill="{color}" font-size="{size}" font-weight="{weight}">{html.escape(str(content))}</text>'
+          
+          def card(title, subtitle, height):
+              return [
+                f'<svg xmlns="http://www.w3.org/2000/svg" width="520" height="{height}" viewBox="0 0 520 {height}" role="img" aria-label="{html.escape(title)}">',
+                f'<rect width="520" height="{height}" rx="14" fill="#0b1220"/>',
+                '<g font-family="Arial, sans-serif">',
+                text(28, 40, title, 21, "#38bdf8", "700"),
+                text(28, 65, subtitle, 12, "#94a3b8")
+              ]
+          
+          parts = card("Estatísticas do GitHub", "Paulo Sérgio · Repositórios públicos próprios, sem forks", 310)
+          rows = [
+              ("Estrelas recebidas", sum(r["stargazerCount"] for r in repos)),
+              ("Repositórios públicos", len(repos)),
+              ("Commits · últimos 12 meses", contributions["totalCommitContributions"]),
+              ("Pull requests · últimos 12 meses", contributions["totalPullRequestContributions"]),
+              ("Issues · últimos 12 meses", contributions["totalIssueContributions"]),
+              ("Revisões de PRs · últimos 12 meses", contributions["totalPullRequestReviewContributions"])
+          ]
+          for i, (label, value) in enumerate(rows):
+              y = 104 + i * 34
+              parts.append(text(28, y, label, 16))
+              parts.append(text(450, y, value, 18, "#f0f9ff", "700"))
+          parts.append('</g></svg>')
+          Path("dist").mkdir(exist_ok=True)
+          Path("dist/stats.svg").write_text("".join(parts))
+          
+          ranked = sorted(languages.items(), key=lambda item: (-item[1], item[0]))
+          if len(ranked) > 6:
+              shown = ranked[:5] + [("Outras", sum(size for _, size in ranked[5:]))]
+          else:
+              shown = ranked
+          total = sum(languages.values())
+          parts = card("Linguagens nos repositórios", "Distribuição por bytes de código · Repositórios públicos, sem forks", 310)
+          if total:
+              x = 28
+              for name, size in shown:
+                  width = 464 * size / total
+                  color = colors.get(name, "#64748b")
+                  parts.append(f'<rect x="{x:.2f}" y="85" width="{width:.2f}" height="12" fill="{color}"/>')
+                  x += width
+              for i, (name, size) in enumerate(shown):
+                  y = 129 + i * 28
+                  color = colors.get(name, "#64748b")
+                  parts.append(f'<circle cx="34" cy="{y-5}" r="5" fill="{color}"/>')
+                  parts.append(text(49, y, name, 16))
+                  parts.append(text(421, y, f"{100*size/total:.1f}%".replace(".", ","), 16, "#f0f9ff"))
+          else:
+              parts.append(text(28, 124, "Nenhuma linguagem detectada ainda.", 16))
+          parts.append('</g></svg>')
+          Path("dist/languages.svg").write_text("".join(parts))
+          print("Generated stats.svg and languages.svg from public GitHub data.")
+
       - name: Generate trophies locally with official action
         uses: ryo-ma/github-profile-trophy@master
         with:
